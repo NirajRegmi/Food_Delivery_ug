@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Little Hunger</string>
+    <string name="name">Name</string>
+    <string name="phonenumber">Phone Number</string>
+    <string name="email">Email</string>
+
+    <string name="e_mail">E-Mail</string>
+    <string name="password">Password</string>
+    <string name="surname">Surname</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="circleimage">Circle Image</string>
+    <string name="es_3341234567">es: 3341234567</string>
+    <string name="address">Address</string>
+    <string name="login">LOGIN</string>
+    <string name="example_gmail">example@gmail.com</string>
+    <string name="order_delivered_rate_your_experience">Order delivered, rate your experience!</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoibmlyYWpyZWdtaSIsImEiOiJja29lNG1jbGUwN2w2MnBwbDh4NjFwNXgxIn0.iuwrEJC7ACtXhkcfUtuvHw</string>
+
+
+</resources>

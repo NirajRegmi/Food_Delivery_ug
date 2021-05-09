@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "464028548762",
+    "firebase_url": "https://little-hunger-7800a-default-rtdb.firebaseio.com",
+    "project_id": "little-hunger-7800a",
+    "storage_bucket": "little-hunger-7800a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464028548762:android:562fdf064e6cfce840e923",
+        "android_client_info": {
+          "package_name": "com.example.fooddelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464028548762-l2rsobfnj9j30cu2j5jiqfq2o0mc8ad0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fooddelivery",
+            "certificate_hash": "cbf9616aa247d2b515effd3ae576d3c7201afb9c"
+          }
+        },
+        {
+          "client_id": "464028548762-fto2b3icja6vjfqrb051rt5o6oc78nou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsUm0pXtmkLKI1Inn-w-ml3TAp-PSEY-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464028548762-fto2b3icja6vjfqrb051rt5o6oc78nou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
