@@ -66,23 +66,23 @@ public class Restaurant extends Fragment
                     .setQuery(FirebaseDatabase.getInstance().getReference(RESTAURATEUR_INFO),
                             snapshot -> {
                                 Restaurateur searchRest;
-                                if(snapshot.child("info").child("photoUri").getValue() == null){
-                                    searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                            snapshot.child("info").child("name").getValue().toString(),
-                                            snapshot.child("info").child("addr").getValue().toString(),
-                                            snapshot.child("info").child("cuisine").getValue().toString(),
-                                            snapshot.child("info").child("openingTime").getValue().toString(),
-                                            snapshot.child("info").child("phone").getValue().toString(),
+                                if(snapshot.child("Restaurent_info").child("photoUri").getValue() == null){
+                                    searchRest = new Restaurateur(snapshot.child("Restaurent_info").child("mail").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("phone").getValue().toString(),
                                             "null");
                                 }
                                 else{
-                                    searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                            snapshot.child("info").child("name").getValue().toString(),
-                                            snapshot.child("info").child("addr").getValue().toString(),
-                                            snapshot.child("info").child("cuisine").getValue().toString(),
-                                            snapshot.child("info").child("openingTime").getValue().toString(),
-                                            snapshot.child("info").child("phone").getValue().toString(),
-                                            snapshot.child("info").child("photoUri").getValue().toString());
+                                    searchRest = new Restaurateur(snapshot.child("Restaurent_info").child("mail").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("phone").getValue().toString(),
+                                            snapshot.child("Restaurent_info").child("photoUri").getValue().toString());
                                 }
                                 return searchRest;
                             }).build();
@@ -162,16 +162,16 @@ public class Restaurant extends Fragment
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot d : dataSnapshot.getChildren()) {
-                        if(cuisineType.add(d.child("info").child("cuisine").getValue().toString())){
+                        if(cuisineType.add(d.child("Restaurent_info").child("cuisine").getValue().toString())){
                             Log.d("CHIP", "building");
                             Chip chip = new Chip(view.getContext());
                             chip.setCheckable(true);
-                            chip.setText(d.child("info").child("cuisine").getValue().toString());
+                            chip.setText(d.child("Restaurent_info").child("cuisine").getValue().toString());
                             chips.add(chip);
                             entryChipGroup.addView(chip);
                             chip.setOnCheckedChangeListener((buttonView, isChecked) -> {
                                 if(isChecked && flag) {
-                                    setFilter(d.child("info").child("cuisine").getValue().toString());
+                                    setFilter(d.child("Restaurent_info").child("cuisine").getValue().toString());
                                 }
                             });
                         }
@@ -186,23 +186,23 @@ public class Restaurant extends Fragment
                                         .setQuery(FirebaseDatabase.getInstance().getReference(RESTAURATEUR_INFO),
                                                 snapshot -> {
                                                     Restaurateur searchRest;
-                                                    if(snapshot.child("info").child("photoUri").getValue() == null){
-                                                        searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                                snapshot.child("info").child("name").getValue().toString(),
-                                                                snapshot.child("info").child("addr").getValue().toString(),
-                                                                snapshot.child("info").child("cuisine").getValue().toString(),
-                                                                snapshot.child("info").child("openingTime").getValue().toString(),
-                                                                snapshot.child("info").child("phone").getValue().toString(),
+                                                    if(snapshot.child("Restaurent_info").child("photoUri").getValue() == null){
+                                                        searchRest = new Restaurateur(snapshot.child("Restaurent_info").child("mail").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("phone").getValue().toString(),
                                                                 "null");
                                                     }
                                                     else{
                                                         searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                                snapshot.child("info").child("name").getValue().toString(),
-                                                                snapshot.child("info").child("addr").getValue().toString(),
-                                                                snapshot.child("info").child("cuisine").getValue().toString(),
-                                                                snapshot.child("info").child("openingTime").getValue().toString(),
-                                                                snapshot.child("info").child("phone").getValue().toString(),
-                                                                snapshot.child("info").child("photoUri").getValue().toString());
+                                                                snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("phone").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("photoUri").getValue().toString());
                                                     }
                                                     return searchRest;
                                                 }).build();
@@ -289,22 +289,22 @@ public class Restaurant extends Fragment
                                         .setQuery(FirebaseDatabase.getInstance().getReference(RESTAURATEUR_INFO),
                                                 snapshot -> {
                                                     Restaurateur searchRest;
-                                                    if (snapshot.child("info").child("photoUri").getValue() == null) {
+                                                    if (snapshot.child("Restaurent_info").child("photoUri").getValue() == null) {
                                                         searchRest = new Restaurateur(Objects.requireNonNull(snapshot.child("info").child("mail").getValue()).toString(),
                                                                 Objects.requireNonNull(snapshot.child("info").child("name").getValue()).toString(),
-                                                                snapshot.child("info").child("addr").getValue().toString(),
-                                                                snapshot.child("info").child("cuisine").getValue().toString(),
-                                                                snapshot.child("info").child("openingTime").getValue().toString(),
-                                                                snapshot.child("info").child("phone").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("phone").getValue().toString(),
                                                                 "null");
                                                     } else {
                                                         searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                                snapshot.child("info").child("name").getValue().toString(),
-                                                                snapshot.child("info").child("addr").getValue().toString(),
-                                                                snapshot.child("info").child("cuisine").getValue().toString(),
-                                                                snapshot.child("info").child("openingTime").getValue().toString(),
-                                                                snapshot.child("info").child("phone").getValue().toString(),
-                                                                snapshot.child("info").child("photoUri").getValue().toString());
+                                                                snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("phone").getValue().toString(),
+                                                                snapshot.child("Restaurent_info").child("photoUri").getValue().toString());
                                                     }
                                                     return searchRest;
                                                 }).build();
@@ -342,23 +342,23 @@ public class Restaurant extends Fragment
                                         .orderByChild("stars/sort"),
                                 snapshot -> {
                                     Restaurateur searchRest;
-                                    if(snapshot.child("info").child("photoUri").getValue() == null){
+                                    if(snapshot.child("Restaurent_info").child("photoUri").getValue() == null){
                                         searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                snapshot.child("info").child("name").getValue().toString(),
-                                                snapshot.child("info").child("addr").getValue().toString(),
-                                                snapshot.child("info").child("cuisine").getValue().toString(),
-                                                snapshot.child("info").child("openingTime").getValue().toString(),
-                                                snapshot.child("info").child("phone").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("phone").getValue().toString(),
                                                 "null");
                                     }
                                     else{
-                                        searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                snapshot.child("info").child("name").getValue().toString(),
-                                                snapshot.child("info").child("addr").getValue().toString(),
-                                                snapshot.child("info").child("cuisine").getValue().toString(),
-                                                snapshot.child("info").child("openingTime").getValue().toString(),
-                                                snapshot.child("info").child("phone").getValue().toString(),
-                                                snapshot.child("info").child("photoUri").getValue().toString());
+                                        searchRest = new Restaurateur(snapshot.child("Restaurent_info").child("mail").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("phone").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("photoUri").getValue().toString());
                                     }
                                     return searchRest;
                                 }).build();
@@ -371,23 +371,23 @@ public class Restaurant extends Fragment
                                         .getReference(RESTAURATEUR_INFO),
                                 snapshot -> {
                                     Restaurateur searchRest;
-                                    if(snapshot.child("info").child("photoUri").getValue() == null){
+                                    if(snapshot.child("Restaurent_info").child("photoUri").getValue() == null){
                                         searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                snapshot.child("info").child("name").getValue().toString(),
-                                                snapshot.child("info").child("addr").getValue().toString(),
-                                                snapshot.child("info").child("cuisine").getValue().toString(),
-                                                snapshot.child("info").child("openingTime").getValue().toString(),
-                                                snapshot.child("info").child("phone").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("phone").getValue().toString(),
                                                 "null");
                                     }
                                     else{
-                                        searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                snapshot.child("info").child("name").getValue().toString(),
-                                                snapshot.child("info").child("addr").getValue().toString(),
-                                                snapshot.child("info").child("cuisine").getValue().toString(),
-                                                snapshot.child("info").child("openingTime").getValue().toString(),
-                                                snapshot.child("info").child("phone").getValue().toString(),
-                                                snapshot.child("info").child("photoUri").getValue().toString());
+                                        searchRest = new Restaurateur(snapshot.child("Restaurent_info").child("mail").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("phone").getValue().toString(),
+                                                snapshot.child("Restaurent_info").child("photoUri").getValue().toString());
                                     }
                                     return searchRest;
                                 }).build();
@@ -441,23 +441,23 @@ public class Restaurant extends Fragment
                                     .setQuery(FirebaseDatabase.getInstance().getReference(RESTAURATEUR_INFO),
                                             snapshot -> {
                                                 Restaurateur searchRest;
-                                                if(snapshot.child("info").child("photoUri").getValue() == null){
+                                                if(snapshot.child("Restaurent_info").child("photoUri").getValue() == null){
                                                     searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                            snapshot.child("info").child("name").getValue().toString(),
-                                                            snapshot.child("info").child("addr").getValue().toString(),
-                                                            snapshot.child("info").child("cuisine").getValue().toString(),
-                                                            snapshot.child("info").child("openingTime").getValue().toString(),
-                                                            snapshot.child("info").child("phone").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("phone").getValue().toString(),
                                                             "null");
                                                 }
                                                 else{
-                                                    searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                            snapshot.child("info").child("name").getValue().toString(),
-                                                            snapshot.child("info").child("addr").getValue().toString(),
-                                                            snapshot.child("info").child("cuisine").getValue().toString(),
-                                                            snapshot.child("info").child("openingTime").getValue().toString(),
-                                                            snapshot.child("info").child("phone").getValue().toString(),
-                                                            snapshot.child("info").child("photoUri").getValue().toString());
+                                                    searchRest = new Restaurateur(snapshot.child("Restaurent_info").child("mail").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("phone").getValue().toString(),
+                                                            snapshot.child("Restaurent_info").child("photoUri").getValue().toString());
                                                 }
 
                                                 return searchRest;
@@ -473,21 +473,21 @@ public class Restaurant extends Fragment
 
                                         if (snapshot.child("info").child("name").exists() && snapshot.child("info").child("name").getValue().toString().toLowerCase().contains(newText.toLowerCase())) {
 
-                                            if (snapshot.child("info").child("photoUri").getValue() != null) {
-                                                searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                        snapshot.child("info").child("name").getValue().toString(),
-                                                        snapshot.child("info").child("addr").getValue().toString(),
-                                                        snapshot.child("info").child("cuisine").getValue().toString(),
-                                                        snapshot.child("info").child("openingTime").getValue().toString(),
-                                                        snapshot.child("info").child("phone").getValue().toString(),
-                                                        snapshot.child("info").child("photoUri").getValue().toString());
+                                            if (snapshot.child("Restaurent_info").child("photoUri").getValue() != null) {
+                                                searchRest = new Restaurateur(snapshot.child("Restaurent_info").child("mail").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("phone").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("photoUri").getValue().toString());
                                             } else {
                                                 searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                                        snapshot.child("info").child("name").getValue().toString(),
-                                                        snapshot.child("info").child("addr").getValue().toString(),
-                                                        snapshot.child("info").child("cuisine").getValue().toString(),
-                                                        snapshot.child("info").child("phone").getValue().toString(),
-                                                        snapshot.child("info").child("openingTime").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("phone").getValue().toString(),
+                                                        snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
                                                         "null");
                                             }
                                         }
@@ -553,23 +553,23 @@ public class Restaurant extends Fragment
                     public Restaurateur parseSnapshot(@NonNull DataSnapshot snapshot) {
                         Restaurateur searchRest = new Restaurateur();
 
-                        if (snapshot.child("info").child("cuisine").exists() && snapshot.child("info").child("cuisine").getValue().toString().equals(filter)) {
+                        if (snapshot.child("Restaurent_info").child("cuisine").exists() && snapshot.child("Restaurent_info").child("cuisine").getValue().toString().equals(filter)) {
 
-                            if (snapshot.child("info").child("photoUri").getValue() != null) {
+                            if (snapshot.child("Restaurent_info").child("photoUri").getValue() != null) {
                                 searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                        snapshot.child("info").child("name").getValue().toString(),
-                                        snapshot.child("info").child("addr").getValue().toString(),
-                                        snapshot.child("info").child("cuisine").getValue().toString(),
-                                        snapshot.child("info").child("openingTime").getValue().toString(),
-                                        snapshot.child("info").child("phone").getValue().toString(),
-                                        snapshot.child("info").child("photoUri").getValue().toString());
+                                        snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("phone").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("photoUri").getValue().toString());
                             } else {
-                                searchRest = new Restaurateur(snapshot.child("info").child("mail").getValue().toString(),
-                                        snapshot.child("info").child("name").getValue().toString(),
-                                        snapshot.child("info").child("addr").getValue().toString(),
-                                        snapshot.child("info").child("cuisine").getValue().toString(),
-                                        snapshot.child("info").child("openingTime").getValue().toString(),
-                                        snapshot.child("info").child("phone").getValue().toString(),
+                                searchRest = new Restaurateur(snapshot.child("Restaurent_info").child("mail").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("name").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("addr").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("cuisine").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("openingTime").getValue().toString(),
+                                        snapshot.child("Restaurent_info").child("phone").getValue().toString(),
                                         "null");
                             }
                         }

@@ -42,6 +42,7 @@ public class OrderDetails extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<String> keys = new ArrayList<>();
     private ArrayList<String> nums = new ArrayList<>();
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

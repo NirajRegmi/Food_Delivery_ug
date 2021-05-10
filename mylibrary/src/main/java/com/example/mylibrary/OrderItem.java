@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 
 public final class OrderItem implements Serializable {
-    public String key, addrfooddelivery, totPrice;
+    public String key, addrCustomer, totPrice;
     public HashMap<String, Integer> dishes; //key = dish name, value = quantity
     public Long time;
     private Integer status;
@@ -13,9 +13,9 @@ public final class OrderItem implements Serializable {
 
     }
 
-    public OrderItem(String key, String addrfooddelivery, String totPrice, Integer status, HashMap<String, Integer> dishes, Long time) {
+    public OrderItem(String key, String addrCustomer, String totPrice, Integer status, HashMap<String, Integer> dishes, Long time) {
         this.key = key;
-        this.addrfooddelivery = addrfooddelivery;
+        this.addrCustomer = addrCustomer;
         this.totPrice = totPrice;
         this.status = status;
         this.dishes = dishes;
@@ -26,8 +26,8 @@ public final class OrderItem implements Serializable {
         return key;
     }
 
-    public String getAddrfooddelivery() {
-        return addrfooddelivery;
+    public String getAddrCustomer() {
+        return addrCustomer;
     }
 
     public String getTotPrice() {
@@ -48,10 +48,6 @@ public final class OrderItem implements Serializable {
 
     public void setKey(String key) {
         this.key = key;
-    }
-
-    public void setAddrfooddelivery(String addrfooddelivery) {
-        this.addrfooddelivery = addrfooddelivery;
     }
 
     public void setTotPrice(String totPrice) {

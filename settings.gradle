@@ -1,3 +1,4 @@
+include ':restaurentapp'
 include ':mylibrary'
 include ':app'
 rootProject.name = "Food Delivery"

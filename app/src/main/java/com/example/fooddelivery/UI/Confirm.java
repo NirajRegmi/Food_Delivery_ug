@@ -62,9 +62,10 @@ public class Confirm extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getIncomingIntent();
         desiredTimeButton =  findViewById(R.id.desired_time);
-        desiredTimeButton.setOnClickListener(l->{setDesiredTimeDialog();});
+        desiredTimeButton.setOnClickListener(l-> setDesiredTimeDialog());
         findViewById(R.id.confirm_order_button).setOnClickListener(e->{
-            if(desiredTime.trim().length() > 0){
+            if(desiredTime.trim().length() > 0)
+            {
 
 
                 DatabaseReference myRef1 = FirebaseDatabase.getInstance().getReference(RESTAURATEUR_INFO + "/" +
@@ -90,7 +91,7 @@ public class Confirm extends AppCompatActivity {
                 orderMap.put(keyOrder, new OrderItem(ROOT_UID, user.getAddr(), tot, STATUS_UNKNOWN, piatti,time));
                 myRef1.updateChildren(orderMap);
 
-                //Aggiungo nella lista ordini da tracciare
+
                 if(orderToTrack==null){
                     orderToTrack=new HashMap<>();
                 }
