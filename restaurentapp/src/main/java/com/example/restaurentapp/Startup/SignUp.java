@@ -80,7 +80,7 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         // Initialize Places.
-        Places.initialize(getApplicationContext(), "AIzaSyAAzAER-HprZhx5zvmEYIjVlJfYSHj2-G8");
+        Places.initialize(getApplicationContext(), "AIzaSyAecO_g2fLnkd4wC12oYbuKYrJxXN2JsBA");
         // Create a new Places client instance.
         PlacesClient placesClient = Places.createClient(this);
         // Set the fields to specify which types of place data to return.
@@ -88,13 +88,13 @@ public class SignUp extends AppCompatActivity {
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
-//        address = findViewById(R.id.button_address);
-//        address.setOnClickListener(l -> {
-//            Intent intent = new Autocomplete.IntentBuilder(
-//                    AutocompleteActivityMode.FULLSCREEN, fields)
-//                    .build(this);
-//            startActivityForResult(intent, 3);
-//        });
+        address = findViewById(R.id.button_address);
+        address.setOnClickListener(l -> {
+            Intent intent = new Autocomplete.IntentBuilder(
+                    AutocompleteActivityMode.FULLSCREEN, fields)
+                    .build(this);
+            startActivityForResult(intent, 3);
+        });
 
         findViewById(R.id.plus).setOnClickListener(p -> editPhoto());
         findViewById(R.id.img_profile).setOnClickListener(e -> editPhoto());
@@ -134,7 +134,7 @@ public class SignUp extends AppCompatActivity {
         mail = ((EditText)findViewById(R.id.mail)).getText().toString();
         psw = ((EditText)findViewById(R.id.psw)).getText().toString();
         name = ((EditText)findViewById(R.id.name)).getText().toString();
-        addr = ((EditText)findViewById(R.id.button_address)).getText().toString();
+        addr = ((Button)findViewById(R.id.button_address)).getText().toString();
         descr = ((EditText)findViewById(R.id.description)).getText().toString();
         phone = ((EditText)findViewById(R.id.time_text)).getText().toString();
 

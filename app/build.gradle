@@ -49,10 +49,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    //mapbox dependenciew
-//    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.6.1'{
-//        exclude group: 'group_name', module: 'module_name'
-//    }
 
 }
 apply plugin: 'com.google.gms.google-services'
