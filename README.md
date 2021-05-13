@@ -12,3 +12,10 @@ Get the local debug certificate fingerprint : keytool -list -v -alias androiddeb
 Step 2 - Download config file google-services.json
 Step 3 - Move google-services.json to {app root folder}/fooddelivery/
 Step 4 - Edit {app root folder}/build.gradle, change classpath to com.google.gms:google-services:version (or whatever google tells you)
+
+This Source consists two model:
+1. Customer app
+2. Restaurater app
+Build Both module appropriately.
+
+
