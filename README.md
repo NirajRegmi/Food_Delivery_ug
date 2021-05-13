@@ -27,6 +27,7 @@ Step 4 - Edit {app root folder}/build.gradle, change classpath to com.google.gms
 This Source consists two model:
 1. Customer app
 2. Restaurater app
+3. 
 Build Both module appropriately.
 
 
